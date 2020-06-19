@@ -1,2 +1,3 @@
 # PiggyVest-Intrest-Calculator
-Calculates intrest for users of piggyvest
+Calculates and project as a user of piggyvest
+https://skylevelconcepts.com.ng/piggyvest-intrest-calculator/
