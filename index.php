@@ -637,6 +637,14 @@ $('.print').click(function(){
   window.open("convert.php",'_blank');
 
 });
+$('.input-radio100').click(function(){
+    
+  
+
+$('html, body').animate({
+    scrollTop: $('.w-full').offset().top});
+});
+
 $('#average').click(function(){
     
     	$('.js-show-service').slideUp();
@@ -647,38 +655,42 @@ $('#average').click(function(){
         $('._middle').text('Project Scenario');
     
 });
+
+
 			$(".js-select2").each(function(){
 				$(this).on('select2:close', function (e){
-				    
+				$('html, body').animate({
+    scrollTop: $('.form-radio').offset().top});
+
 					if($(this).val() == "Please choose") {
-						$('.js-show-service').slideUp();
+						
 					}else if($(this).val() == "Piggybank") {
-				$('.js-show-service').slideUp();
+				
 					$('.texte').text('10% per annum on Piggybank');
 					$('.js-show-service').slideDown();
 					}else if($(this).val() == "SafeLock") {
-						$('.js-show-service').slideUp();
+						
 						$('.texte').text('Up to 15.5% per annum on SafeLock');
 						$('.js-show-service').slideDown();
 					}else if($(this).val() == "Target") {
-						$('.js-show-service').slideUp();
+						
 						$('.texte').text('10% per annum on Target');
 						$('.js-show-service').slideDown();
 					}else if($(this).val() == "Flex") {
-						$('.js-show-service').slideUp();
+						
 						$('.texte').text('10% per annum on Flex');
 						$('.js-show-service').slideDown();
 					}else if($(this).val() == "Flex Dollar") {
-						$('.js-show-service').slideUp();
+						
 						$('.texte').text('6% per annum on Flex Dollar');
 						$('.js-show-service').slideDown();
 					}else if($(this).val() == "Investify") {
-						$('.js-show-service').slideUp();
+						
 						$('.texte').text('Up to 25% on Investify');
 						$('.js-show-service').slideDown();
 					}
-					  $('html, body').animate({
-    scrollTop: $('.dropDownSelect2').offset().top});
+				// 	  $('html, body').animate({
+    // scrollTop: $('.dropDownSelect2').offset().top});
 				});
 			});
 		})
@@ -708,8 +720,9 @@ $('#average').click(function(){
                           
                         
 						jQuery("#insta-form").submit(function(e){
-                            
-                           
+                            	$('html, body').animate({
+    scrollTop: $('.w-full').offset().bottom});
+                           $('#ent').html('<div class="alert alert-info alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><h7><i class="icon fa fa-ban"></i> Processing <br></h7></div>');
         		   $('.print').show();
 
                                           
