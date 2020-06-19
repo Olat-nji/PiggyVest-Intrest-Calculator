@@ -510,7 +510,18 @@
 							<i class="fa fa-file-pdf m-l-7" aria-hidden="true"></i>
 						</span>
 					</button>
-				</div>
+				</div><br>
+				<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style share"  data-a2a-title="Check Out my PiggyVest Report " style="bottom:0px; right:0px;">
+				    	<div class="wrap-input100 input100-select bg1 " style=" font-weight:600;border:none;margin:2px; padding:0px;background:white;text-align:center;">
+					<span class="label-input100" style="color:#000;font-family: 'U8-Bo', sans-serif; font-size:12px;">Share Results</span>
+					</div>	
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+
 				</div>
 				<div class="contact100-form off">
 				<div class="wrap-input100 input100-select bg1">
@@ -622,6 +633,7 @@
 				$('._middle').html('Calculate Interest');
 	$('.off').hide();
 $('.print').hide();
+$('.share').hide();
     	    $('.note span').html('Calculate your interest after a particular period');
 $('#newbie').click(function(){
   
@@ -715,17 +727,63 @@ $('#average').click(function(){
 
   gtag('config', 'UA-23581568-13');
 </script>
+
 <script>
 						jQuery(document).ready(function(){
                           
                         
+							function getScript(url) {
+    e = document.createElement('script');
+    e.src = url;
+    document.body.appendChild(e);
+}
+
+							jQuery("#insta-form").submit(function(e){
+                            
+                                      
+								e.preventDefault();
+								var formData = jQuery(this).serialize();
+                                      
+                       $.ajax({
+                           
+									type:"POST",
+									url:"convert.php",
+									data:formData,
+                           
+									success: function(response){
+									if(response!='false')
+									{	var file=$.trim(response);
+                                        
+                                        $(".share").attr("data-a2a-url","http://skylevelconcepts.com.ng/piggyvest-intrest-calculator/"+file);
+			 getScript('https://static.addtoany.com/menu/page.js');
+			 $('.share').show();
+									}else
+									{
+									 
+                                      
+									 
+                                      
+  
+   
+                                        
+                                        
+                                        //alert(response);
+                                         
+									
+									 }
+									
+                      }
+								});
+								return false;
+							});
 						jQuery("#insta-form").submit(function(e){
                             	$('html, body').animate({
     scrollTop: $('.w-full').offset().bottom});
                            $('#ent').html('<div class="alert alert-info alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><h7><i class="icon fa fa-ban"></i> Processing <br></h7></div>');
         		   $('.print').show();
+        		   
 
-                                          
+                                      
 								e.preventDefault();
 								var formData = jQuery(this).serialize();
                                       
@@ -748,7 +806,7 @@ $('#average').click(function(){
 									{
 									  
 										$('#ent').html('<div class="alert alert-danger alert-dismissible" style="font-family: Montserrat-SemiBold;"><button type="button" id="click" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><h7><i class="icon fa fa-ban"></i> '+response+'<br></h7><h10><h10></div>');
-                              
+                              s
 										setTimeout((function(){ 
    $(".alert").fadeOut();  }), 8000);
 									 
