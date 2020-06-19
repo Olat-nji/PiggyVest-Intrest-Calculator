@@ -1,7 +1,13 @@
 
 <?php
 session_start();
-$id=uniqid();
+if(isset($_SESSION['id'])){
+  $reportname='Piggyvest-report'.$_SESSION['id'];  
+}else{
+    $_SESSION['id']=uniqid();
+    $reportname='Piggyvest-report'.$_SESSION['id']; 
+}
+
 
 require __DIR__ . '/convert/lib/ConvertApi/autoload.php';
 
@@ -18,19 +24,19 @@ ConvertApi::setApiSecret('GUI5RnloF0soPqHz');
 $fromFormat = 'web';
 $conversionTimeout = 180;
 $dir = sys_get_temp_dir();
-$_SESSION['reportname']='Piggyvest-report'.$id;
+
 
 $result = ConvertApi::convert(
     'pdf',
     [
         'Url' => 'https://skylevelconcepts.com.ng/piggyvest-intrest-calculator/gen.php?tot='.$_SESSION['tot'].'&amount='.$_SESSION['amount'].'&days='.$_SESSION['days'].'&for='.$_SESSION['for'],
-        'FileName' => $_SESSION['report-name']
+        'FileName' => $reportname
     ],
     $fromFormat,
     $conversionTimeout
 );
 
-$savedFiles = $result->saveFiles('reports/Piggyvest-report'.$id.'.pdf');
+$savedFiles = $result->saveFiles('reports/'.$reportname.'.pdf');
 if(isset($_POST['member_level'])){
     echo $savedFiles[0];
 }else{
