@@ -53,6 +53,10 @@
 			font-family: "U8-Bold"; 
 			src: url("fonts/U8Trial-Bold.otf") format("opentype");
 		}
+		@font-face {
+			font-family: "U8-Bo"; 
+			src: url("VarelaRound-Regular.ttf") format("opentype");
+		}
 		/*************** U8 Font *****************/
 
 		@font-face {
@@ -421,8 +425,8 @@
 
                         
                     </div>
-                    	<div class="wrap-input100 input100-select bg1 note" style="text-align:center;">
-					<span class="label-input100" style="text-align:center;"></span>
+                    	<div class="wrap-input100 input100-select bg1 note" style=" font-weight:600;border:none;background:white;text-align:center;">
+					<span class="label-input100" style="text-align:left; color:#000;font-family: 'U8-Bo', sans-serif;"></span>
 					</div>
                     <div class="contact100-form on">
 				<div class="wrap-input100 input100-select bg1">
@@ -618,12 +622,12 @@
 				$('._middle').html('Calculate Interest');
 	$('.off').hide();
 $('.print').hide();
-    	    $('.note span').html('<code style=" color:black;">Calculate your interest after a particular period</code>');
+    	    $('.note span').html('Calculate your interest after a particular period');
 $('#newbie').click(function(){
   
      $('._middle').html('Calculate Interest');
     	$('.js-show-service').slideUp();
-    	   $('.note span').html('<code style=" color:black;">Calculate your interest after a particular period</code>');
+    	   $('.note span').html('Calculate your interest after a particular period');
    	$('.off').hide();
     $('.on').show();
    
@@ -637,7 +641,7 @@ $('#average').click(function(){
     
     	$('.js-show-service').slideUp();
     	  $('._middle').html('Project Scenario');
-    	    $('.note span').html('<code style=" color:black;">Project daily saving to reach particular goal after speculated period of time</code>');
+    	    $('.note span').html('Project daily saving to reach particular goal after speculated period of time');
  $('.off').show();
     $('.on').hide();
         $('._middle').text('Project Scenario');
@@ -649,7 +653,7 @@ $('#average').click(function(){
 					if($(this).val() == "Please choose") {
 						$('.js-show-service').slideUp();
 					}else if($(this).val() == "Piggybank") {
-				
+				$('.js-show-service').slideUp();
 					$('.texte').text('10% per annum on Piggybank');
 					$('.js-show-service').slideDown();
 					}else if($(this).val() == "SafeLock") {
